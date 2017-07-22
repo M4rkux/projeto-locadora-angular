@@ -1,0 +1,22 @@
+<h5>Cadastrar novo filme</h5>
+
+<div class="alert alert-success" role="alert" *ngIf="sucesso">
+  Formulário enviado com sucesso!
+  <br /> {{ debug() }}
+</div>
+
+<form class="col s12" *ngIf="!sucesso" (ngSubmit)="enviar()">
+  <div class="row">
+    <div class="input-field col s12">
+      <input placeholder="Título do filme" id="titulo" name="titulo" type="text" class="validate" [(ngModel)]="filme.Titulo">
+      <label for="titulo">Título</label>
+    </div>
+    <div class="input-field col s12">
+      <input placeholder="Gênero do filme" name="genero" id="genero" type="text" class="validate" [(ngModel)]="filme.Genero">
+      <label for="genero">Gênero</label>
+    </div>
+    <button type="submit" class="waves-effect waves-light btn">
+      Enviar
+    </button>
+  </div>
+</form>

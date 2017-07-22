@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col m6">
+    <h5>Lista de filmes</h5>
+    <div class="collection">
+      <a 
+      routerLinkActive="active"
+      *ngFor="let filme of filmes" 
+      class="collection-item"
+      [routerLink]="['/Filmes', filme.ID]">{{ filme.Titulo }}</a>
+    </div>
+    <a class="waves-effect waves-light btn" [routerLink]="['/Filmes', 'novo']">Novo</a>
+  </div>
+  <div class="col m6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
